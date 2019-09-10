@@ -5,8 +5,10 @@ using UnityEngine;
 [ExecuteInEditMode]
 [SelectionBase]
 [RequireComponent(typeof(Waypoint))]
+
 public class CubeEditor : MonoBehaviour
-{   
+{
+    
     Waypoint waypoint;
 
     private void Awake()
@@ -18,6 +20,7 @@ public class CubeEditor : MonoBehaviour
     {
         SnapToGrid();
         UpdateLabel();
+        
     }
 
     private void SnapToGrid()
@@ -41,4 +44,5 @@ public class CubeEditor : MonoBehaviour
         textMesh.text = labelText;
         gameObject.name = labelText;
     }
+ 
 }

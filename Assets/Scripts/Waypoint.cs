@@ -6,7 +6,7 @@ public class Waypoint : MonoBehaviour
 {
 
     Vector2Int gridPos;
-    const int gridSize = 10;
+    const int gridSize = 10; 
 
     public int GetGridSize()
     {
@@ -20,4 +20,11 @@ public class Waypoint : MonoBehaviour
              Mathf.RoundToInt(transform.position.z / gridSize) * gridSize
         );
     } 
+
+    public void SetTopColor(Color color)
+    {
+        MeshRenderer topMeshRenderer =  transform.Find("Top").GetComponent<MeshRenderer>();
+        topMeshRenderer.material.color = color;
+
+    }
 }
