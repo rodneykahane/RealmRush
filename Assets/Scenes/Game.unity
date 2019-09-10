@@ -251,7 +251,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -417,7 +417,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -501,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -585,7 +585,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -681,7 +681,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -777,7 +777,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -873,7 +873,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -957,7 +957,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -1041,7 +1041,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -1137,7 +1137,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -1221,7 +1221,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -1256,6 +1256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1729337147}
+  - component: {fileID: 1729337148}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -1290,6 +1291,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1729337148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729337146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1537b395a68d4e41bc17b8d2095203a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2097722844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1360,7 +1373,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text
@@ -1381,6 +1394,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6816247668435008, guid: c15b6db1de04f1a4ab849815804e1559, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1131641092293401184, guid: c15b6db1de04f1a4ab849815804e1559,
         type: 3}
       propertyPath: path.Array.size
@@ -1416,10 +1433,6 @@ PrefabInstance:
       propertyPath: path.Array.data[5]
       value: 
       objectReference: {fileID: 1597350130}
-    - target: {fileID: 6816247668435008, guid: c15b6db1de04f1a4ab849815804e1559, type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 6816247668435135, guid: c15b6db1de04f1a4ab849815804e1559, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1540,7 +1553,7 @@ PrefabInstance:
     - target: {fileID: 4100672260247009935, guid: 8c742fe13fba4426ba93e213d468fec0,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1302462250, guid: 8c742fe13fba4426ba93e213d468fec0, type: 3}
       propertyPath: m_Text

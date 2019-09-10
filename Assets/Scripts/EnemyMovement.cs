@@ -11,20 +11,20 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(PrintAllWayPoints());
-        print("back at start");
+        //StartCoroutine(PrintAllWayPoints());
+        //print("back at start");
     }
 
     IEnumerator PrintAllWayPoints()
     {
-        print("Starting patrol ...");
+        //print("Starting patrol ...");
         foreach (Waypoint waypoint in path)
         {
             transform.position = waypoint.transform.position;
-            print("Visiting " + waypoint);
+            //print("Visiting " + waypoint);
             yield return new WaitForSeconds(1f);
         }
-        print("Ending patrol ...");
+        //print("Ending patrol ...");
 
 
     }
@@ -37,6 +37,8 @@ public class EnemyMovement : MonoBehaviour
 
     /*  my challenge solution
      
+    //created global variable int cnt = 1;
+
     IEnumerator PrintAllWayPoints()
     {
         foreach (Waypoint waypoint in path)
