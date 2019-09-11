@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
-    [SerializeField] List<Waypoint> path;
+    //[SerializeField] List<Waypoint> path;
     //int cnt = 1;
     
     // Start is called before the first frame update
@@ -13,27 +13,27 @@ public class EnemyMovement : MonoBehaviour
     {
         //StartCoroutine(PrintAllWayPoints());
         //print("back at start");
+
+        Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
+        var path = pathfinder.GetPath();
+        StartCoroutine(FollowPath(path));
     }
 
-    IEnumerator PrintAllWayPoints()
+    IEnumerator FollowPath(List<Waypoint> path)
     {
-        //print("Starting patrol ...");
+        print("Starting patrol ...");
         foreach (Waypoint waypoint in path)
         {
             transform.position = waypoint.transform.position;
-            //print("Visiting " + waypoint);
+            print("Visiting " + waypoint);
             yield return new WaitForSeconds(1f);
         }
-        //print("Ending patrol ...");
+        print("Ending patrol ...");
 
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     /*  my challenge solution
      

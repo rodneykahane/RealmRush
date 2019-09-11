@@ -6,10 +6,12 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour
 {
     [SerializeField] Waypoint startWaypoint, endWaypoint;
+
     Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
     Queue<Waypoint> queue = new Queue<Waypoint>();
     [SerializeField] bool isRunning = true;
     Waypoint searchCenter;
+    List<Waypoint> path = new List<Waypoint>();  
 
 
     Vector2Int[] directions = {
@@ -21,16 +23,39 @@ public class Pathfinder : MonoBehaviour
        
     };
 
-    // Start is called before the first frame update
-    void Start()
+    public List<Waypoint> GetPath()
     {
         LoadBlocks();
         ColorStartAndEnd();
-        Pathfind();
-        //ExploreNeighors();
+        BreadthFirstSearch();
+        CreatPath();
+        return path;
     }
 
-    private void Pathfind()
+    private void CreatPath()
+    {
+        path.Add(endWaypoint);
+        
+        Waypoint previous = endWaypoint.exploredFrom;
+        while(previous != startWaypoint)
+        {
+            path.Add(previous);
+            previous = previous.exploredFrom;
+        }
+
+        path.Add(startWaypoint);        
+        path.Reverse();        
+    }
+
+    /*
+    //added this to add back colors for start/end cubes
+    private void Update()
+    {
+        ColorStartAndEnd();
+    }
+    */
+
+    private void BreadthFirstSearch()
     {
 
         queue.Enqueue(startWaypoint);
@@ -44,7 +69,7 @@ public class Pathfinder : MonoBehaviour
             searchCenter.isExplored = true;
         }
 
-        print("finished pathfinding?");
+        print("finished pathfinding?");        
         
     }
 
@@ -91,7 +116,7 @@ public class Pathfinder : MonoBehaviour
         }
         else
         { 
-            neighbor.SetTopColor(Color.blue);
+            //neighbor.SetTopColor(Color.blue);  //moving this to Waypoint.cs
             queue.Enqueue(neighbor);
             Debug.Log("Queueing " + neighbor);
             neighbor.exploredFrom = searchCenter;
