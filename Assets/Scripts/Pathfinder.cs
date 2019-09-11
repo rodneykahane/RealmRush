@@ -34,12 +34,13 @@ public class Pathfinder : MonoBehaviour
 
         queue.Enqueue(startWaypoint);
 
-        while (queue.Count > 0 && isRunning)
+        while (queue.Count > 0 && isRunning)        
         {
-            var searchCenter = queue.Dequeue();
+            var searchCenter = queue.Dequeue();            
             print("Searching from: " + searchCenter); // todo remove later
             HaltIfEndFound(searchCenter);
             ExploreNeighors(searchCenter);
+            searchCenter.isExplored = true;
         }
 
         print("finished pathfinding?");
@@ -53,11 +54,7 @@ public class Pathfinder : MonoBehaviour
             Debug.Log("Searching from end node, quitting");
             isRunning = false;            
         }
-        else
-        {
-
-            //print("doing stuff");
-        }
+        
     }
 
     private void ExploreNeighors(Waypoint from)
@@ -68,14 +65,11 @@ public class Pathfinder : MonoBehaviour
         }
         foreach(Vector2Int direction in directions)
         {           
-            Vector2Int neighborCoordinates = startWaypoint.GetGridPos() + direction;
+            Vector2Int neighborCoordinates = from.GetGridPos() + direction;
             
             try
             {
-                Waypoint neighbor = grid[neighborCoordinates];
-                neighbor.SetTopColor(Color.blue);
-                queue.Enqueue(neighbor);
-                print("Queuing " + neighbor);
+                QueueNewNeighbors(neighborCoordinates);
             }
             catch
             {
@@ -83,6 +77,22 @@ public class Pathfinder : MonoBehaviour
                 //Debug.Log("non existent waypoint");
             }
 
+        }
+    }
+
+    private void QueueNewNeighbors(Vector2Int neighborCoordinates)
+    {
+        Waypoint neighbor = grid[neighborCoordinates];
+        if (neighbor.isExplored)
+        {
+
+
+        }
+        else
+        { 
+            neighbor.SetTopColor(Color.blue);
+            queue.Enqueue(neighbor);
+            print("Queuing " + neighbor);
         }
     }
 
