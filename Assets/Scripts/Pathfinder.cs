@@ -37,7 +37,8 @@ public class Pathfinder : MonoBehaviour
 
         while (queue.Count > 0 && isRunning)        
         {
-            searchCenter = queue.Dequeue();                        
+            searchCenter = queue.Dequeue();
+            Debug.Log("Searching from: " + searchCenter);
             HaltIfEndFound();
             ExploreNeighors();
             searchCenter.isExplored = true;
@@ -92,6 +93,7 @@ public class Pathfinder : MonoBehaviour
         { 
             neighbor.SetTopColor(Color.blue);
             queue.Enqueue(neighbor);
+            Debug.Log("Queueing " + neighbor);
             neighbor.exploredFrom = searchCenter;
         }
     }
